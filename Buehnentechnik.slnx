@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="SteamAudioUnity.csproj" />
+  <Project Path="SteamAudioUnityEditor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+</Solution>
