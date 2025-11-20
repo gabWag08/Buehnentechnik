@@ -1092,7 +1092,7 @@ MonoBehaviour:
   Length: {fileID: 2101549198}
   Width: {fileID: 1247445613}
   Height: {fileID: 1324089653}
-  roomPrefab: {fileID: 2509269491495232725, guid: f109e11970a8d9f42b2f5dd04eb3e872, type: 3}
+  roomPrefab: {fileID: 919132149155446097, guid: 4e71e064ed3225741aa5868265c12016, type: 3}
 --- !u!1 &761535874
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,8 +2898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ActionAssets:
-  - {fileID: -944628639613478452, guid: 2eb5d32b241a48949a1f566dd44d3ede, type: 3}
+  m_ActionAssets: []
 --- !u!114 &1813108302
 MonoBehaviour:
   m_ObjectHideFlags: 0

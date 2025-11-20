@@ -13,6 +13,8 @@ public class Inputviewer : MonoBehaviour
 
     public GameObject roomPrefab;
 
+    private int scaleMod = 100;
+
     public void MakeVisible()
     {
         panel.SetActive(true);
@@ -38,6 +40,6 @@ public class Inputviewer : MonoBehaviour
         GameObject roomInstance = Instantiate(roomPrefab, Vector3.zero, Quaternion.identity);
 
         // Raum skalieren
-        roomInstance.transform.localScale = new Vector3(length, height, width);
+        roomInstance.transform.localScale = new Vector3(length*scaleMod, height*scaleMod, width*scaleMod);
     }
 }
