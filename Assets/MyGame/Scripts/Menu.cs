@@ -12,6 +12,8 @@ public class Inputviewer : MonoBehaviour
     public TMP_InputField Height;
 
     public GameObject roomPrefab;
+    public GameObject XR;
+    public Camera cam;
 
     private int scaleMod = 100;
 
@@ -35,6 +37,8 @@ public class Inputviewer : MonoBehaviour
 
         // Canvas verstecken
         canvas.gameObject.SetActive(false);
+        XR.SetActive(true);
+        Destroy(cam.gameObject);
 
         // Raum erstellen
         GameObject roomInstance = Instantiate(roomPrefab, Vector3.zero, Quaternion.identity);
