@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Inputviewer : MonoBehaviour
 {
@@ -14,10 +15,20 @@ public class Inputviewer : MonoBehaviour
     public GameObject roomPrefab;
     public GameObject XR;
     public Camera cam;
+    public Button Createbutton;
+    public Button Prebutton;
 
     private int scaleMod = 100;
 
     public void MakeVisible()
+    {
+        Createbutton.gameObject.SetActive(true);
+        Prebutton.gameObject.SetActive(true);
+
+
+    }
+
+    public void PanelVisible()
     {
         panel.SetActive(true);
     }
