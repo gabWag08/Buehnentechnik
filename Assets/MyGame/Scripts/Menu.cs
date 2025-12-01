@@ -56,5 +56,9 @@ public class Inputviewer : MonoBehaviour
 
         // Raum skalieren
         roomInstance.transform.localScale = new Vector3(length*scaleMod, height*scaleMod, width*scaleMod);
+
+        MeshCollider col = roomInstance.AddComponent<MeshCollider>();
+
+    
     }
 }
