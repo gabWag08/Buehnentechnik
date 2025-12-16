@@ -17,6 +17,7 @@ public class Inputviewer : MonoBehaviour
     public Camera cam;
     public Button Createbutton;
     public Button Prebutton;
+    public GameObject PreBuildRoom;
 
     private int scaleMod = 100;
 
@@ -60,5 +61,14 @@ public class Inputviewer : MonoBehaviour
         MeshCollider col = roomInstance.AddComponent<MeshCollider>();
 
     
+    }
+
+    public void CreatePreBuildRoom()
+    {
+        canvas.gameObject.SetActive(false);
+        XR.SetActive(true);
+        Destroy(cam.gameObject);
+        PreBuildRoom.SetActive(true);
+
     }
 }
