@@ -7,7 +7,7 @@ public class MenuVisibilityController : MonoBehaviour
     [Tooltip("Der Root des Menüs, der ein- und ausgeblendet werden soll.")]
     public GameObject menuRoot;
     [Tooltip("Der Schwellenwert in Grad. Wenn die Controller-Rotation (z.B. nach oben) diesen Wert überschreitet, wird das Menü angezeigt.")]
-    public float activationAngleThreshold = 220f;
+    public float activationAngleThreshold = 127f;
     
     // Wir nehmen an, der Controller ist an einen Input-Action-Asset gebunden, 
     // das die Rotation in einem geeigneten Format liefert (z.B. eine Quaternion/Vector3).
