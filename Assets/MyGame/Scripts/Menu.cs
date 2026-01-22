@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Inputviewer : MonoBehaviour
 {
     public GameObject panel;
-    public Canvas canvas;
+    public GameObject InitRoom;
 
     // WICHTIG: TMP_InputField, nicht TextMeshProUGUI!
     public TMP_InputField Length;
@@ -18,6 +18,9 @@ public class Inputviewer : MonoBehaviour
     public Button Createbutton;
     public Button Prebutton;
     public GameObject PreBuildRoom;
+
+    public Button Reload;
+    public Button SceneChange;
 
     private int scaleMod = 100;
 
@@ -48,7 +51,7 @@ public class Inputviewer : MonoBehaviour
         }
 
         // Canvas verstecken
-        canvas.gameObject.SetActive(false);
+        InitRoom.gameObject.SetActive(false);
         XR.SetActive(true);
         Destroy(cam.gameObject);
 
@@ -65,10 +68,20 @@ public class Inputviewer : MonoBehaviour
 
     public void CreatePreBuildRoom()
     {
-        canvas.gameObject.SetActive(false);
+        InitRoom.gameObject.SetActive(false);
         XR.SetActive(true);
         Destroy(cam.gameObject);
         PreBuildRoom.SetActive(true);
 
+    }
+
+    public void ReloadScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
+
+    public void ChangeScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("RoomScene");
     }
 }
