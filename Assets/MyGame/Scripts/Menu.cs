@@ -28,8 +28,6 @@ public class Inputviewer : MonoBehaviour
     {
         Createbutton.gameObject.SetActive(true);
         Prebutton.gameObject.SetActive(true);
-
-
     }
 
     public void PanelVisible()
