@@ -1,23 +1,27 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class ObjSpawner : MonoBehaviour
 {
-    public Transform spawnPoint; // z.B. vor der Kamera
     public GameObject currentPrefab;
+    public XRDirectInteractor handInteractor;
 
-    public void SetPrefab(GameObject prefab)
+
+    public void SetPrefab(GameObject newPrefab)
     {
-        currentPrefab = prefab;
+        currentPrefab = newPrefab;
     }
 
     public void SpawnObject()
     {
-        if (currentPrefab == null) return;
+        GameObject obj = Instantiate(currentPrefab, handInteractor.transform.position, Quaternion.identity);
 
-        GameObject newObj = Instantiate(currentPrefab, spawnPoint.position, spawnPoint.rotation);
+        XRGrabInteractable grab = obj.GetComponent<XRGrabInteractable>();
 
-        // XR Grab Interaction hinzufügen, damit man das Objekt greifen kann
-        if (!newObj.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>())
-            newObj.AddComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+        handInteractor.interactionManager.SelectEnter(
+            (IXRSelectInteractor)handInteractor,
+            (IXRSelectInteractable)grab
+        );
     }
 }

@@ -5,20 +5,36 @@ public class ControllerMenuVisibility : MonoBehaviour
     public GameObject menuCanvas;
     public Transform head;
 
-    [Range(-1f, 1f)]
-    public float showThreshold = 0.6f;
+    // Which direction the menu faces (adjust if needed)
+    public Vector3 localMenuNormal = Vector3.right;
+
+    public float showAngle = 60f; // degrees
+
+    void Start()
+    {
+        // Start hidden
+        menuCanvas.SetActive(false);
+    }
 
     void Update()
     {
-        // Change this axis if needed
-        Vector3 controllerFacingDirection = -transform.right; 
+        // Convert local direction to world direction
+        Vector3 menuDirection = transform.TransformDirection(localMenuNormal);
 
-        Vector3 directionToHead = (head.position - transform.position).normalized;
+        // Direction from controller to head
+        Vector3 toHead = (head.position - transform.position).normalized;
 
-        float dot = Vector3.Dot(controllerFacingDirection, directionToHead);
+        float angle = Vector3.Angle(menuDirection, toHead);
 
-        bool shouldShow = dot > showThreshold;
-
-        menuCanvas.SetActive(shouldShow);
+        if (angle < showAngle)
+        {
+            if (!menuCanvas.activeSelf)
+                menuCanvas.SetActive(true);
+        }
+        else
+        {
+            if (menuCanvas.activeSelf)
+                menuCanvas.SetActive(false);
+        }
     }
 }
