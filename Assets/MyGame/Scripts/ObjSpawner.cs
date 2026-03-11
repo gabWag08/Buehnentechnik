@@ -1,27 +1,40 @@
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class ObjSpawner : MonoBehaviour
 {
     public GameObject currentPrefab;
-    public XRDirectInteractor handInteractor;
+    public NearFarInteractor handInteractor;
 
 
-    public void SetPrefab(GameObject newPrefab)
+    public void SpawnObject(GameObject prefab) 
     {
-        currentPrefab = newPrefab;
-    }
+        currentPrefab = prefab;
+        if (currentPrefab == null)
+        {
+            Debug.LogWarning("No prefab selected!");
+            return;
+        }
 
-    public void SpawnObject()
-    {
-        GameObject obj = Instantiate(currentPrefab, handInteractor.transform.position, Quaternion.identity);
+        // Spawn slightly in front of the hand
+        Vector3 spawnPos = handInteractor.transform.position + handInteractor.transform.forward * 0.1f;
+
+        GameObject obj = Instantiate(currentPrefab, spawnPos, Quaternion.identity);
 
         XRGrabInteractable grab = obj.GetComponent<XRGrabInteractable>();
 
-        handInteractor.interactionManager.SelectEnter(
-            (IXRSelectInteractor)handInteractor,
-            (IXRSelectInteractable)grab
-        );
+        if (grab != null)
+        {
+            handInteractor.interactionManager.SelectEnter(
+                (IXRSelectInteractor)handInteractor,
+                (IXRSelectInteractable)grab
+            );
+        }
+        else
+        {
+            Debug.LogWarning("Spawned object has no XRGrabInteractable!");
+        }
     }
 }
