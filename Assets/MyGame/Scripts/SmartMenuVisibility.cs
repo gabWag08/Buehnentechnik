@@ -1,64 +1,30 @@
 using UnityEngine;
 
-public class SmartMenuVisibility : MonoBehaviour
+public class ControllerMenuState : MonoBehaviour
 {
-    [Header("Wichtige Zuweisungen")]
-    public Transform headCamera;
-    public GameObject menuRoot;
-    
-    [Tooltip("Ziehe hier das 'MenuAimReference' Objekt rein")]
-    public Transform aimReference; 
+    public GameObject detailHardware;
+    public GameObject detailMaterials;
 
-    [Header("Feinjustierung")]
-    [Range(0f, 1f)]
-    public float activationThreshold = 0.7f; // Etwas toleranter eingestellt (0.7 ist oft besser als 0.85)
-    public bool showDebugLines = true;
-
-    void Start()
+    void OnEnable()
     {
-        if (headCamera == null) headCamera = Camera.main.transform;
-        if(menuRoot != null) menuRoot.SetActive(false);
+        ResetMenu();
     }
 
-    void Update()
+    public void ResetMenu()
     {
-        if (headCamera == null || menuRoot == null || aimReference == null) return;
-
-        CheckMenuVisibility();
+        detailHardware.SetActive(false);
+        detailMaterials.SetActive(false);
     }
 
-    void CheckMenuVisibility()
+    public void ShowHardware()
     {
-        // Richtung zum Kopf
-        Vector3 directionToHead = (headCamera.position - transform.position).normalized;
-
-        // WICHTIG: Wir nutzen jetzt die 'forward' (Blauer Pfeil) Richtung deiner Reference!
-        Vector3 pointingDirection = aimReference.forward; 
-
-        float dotProduct = Vector3.Dot(pointingDirection, directionToHead);
-
-        if (dotProduct > activationThreshold)
-        {
-            if (!menuRoot.activeSelf) menuRoot.SetActive(true);
-        }
-        else
-        {
-            if (menuRoot.activeSelf) menuRoot.SetActive(false);
-        }
+        detailHardware.SetActive(true);
+        detailMaterials.SetActive(false);
     }
 
-    private void OnDrawGizmos()
+    public void ShowMaterials()
     {
-        if (!showDebugLines || aimReference == null) return;
-
-        // Zeigt jetzt den Blauen Pfeil deiner Reference an
-        Gizmos.color = Color.green; // Zeichne es trotzdem grün, damit man es gut sieht
-        Gizmos.DrawRay(aimReference.position, aimReference.forward * 0.5f);
-
-        if (headCamera != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, headCamera.position);
-        }
+        detailMaterials.SetActive(true);
+        detailHardware.SetActive(false);
     }
 }
