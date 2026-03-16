@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3314262238068779282}
   m_Layer: 0
   m_Name: SpeakerBox
-  m_TagString: Untagged
+  m_TagString: Speaker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
