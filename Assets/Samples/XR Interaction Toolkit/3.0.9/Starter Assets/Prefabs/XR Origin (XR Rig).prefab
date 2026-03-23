@@ -864,8 +864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c1d44fd7f14a44e92ff16e2ced8a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 4645583630132093141}
   currentPrefab: {fileID: 0}
+  handInteractor: {fileID: 0}
 --- !u!1 &1079599917391733636
 GameObject:
   m_ObjectHideFlags: 0

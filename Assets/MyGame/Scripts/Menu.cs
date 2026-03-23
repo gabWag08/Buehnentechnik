@@ -22,7 +22,7 @@ public class Inputviewer : MonoBehaviour
     public Button Reload;
     public Button SceneChange;
 
-    private int scaleMod = 100;
+    private int scaleMod = 1;
 
     public void MakeVisible()
     {

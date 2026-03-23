@@ -6935,6 +6935,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderPrefab: {fileID: 6892305595069409534, guid: 8da63353d3d676b40826924574c8e818, type: 3}
   sliderParent: {fileID: 2141377236}
+  minSliderHeight: 20
+  maxSliderHeight: 100
+  spacing: 10
 --- !u!114 &2141377239
 MonoBehaviour:
   m_ObjectHideFlags: 0
