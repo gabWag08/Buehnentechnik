@@ -1,6 +1,7 @@
-public static class RoomData
+[System.Serializable]
+public class RoomData
 {
-    public static int length;
-    public static int width;
-    public static int height;
+    public int length;
+    public int width;
+    public int height;
 }
