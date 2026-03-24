@@ -1,28 +1,19 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Inputviewer : MonoBehaviour
 {
     public GameObject panel;
     public GameObject InitRoom;
 
-    // WICHTIG: TMP_InputField, nicht TextMeshProUGUI!
     public TMP_InputField Length;
     public TMP_InputField Width;
     public TMP_InputField Height;
 
-    public GameObject roomPrefab;
-    public GameObject XR;
-    public Camera cam;
     public Button Createbutton;
     public Button Prebutton;
-    public GameObject PreBuildRoom;
-
-    public Button Reload;
-    public Button SceneChange;
-
-    private int scaleMod = 1;
 
     public void MakeVisible()
     {
@@ -37,7 +28,6 @@ public class Inputviewer : MonoBehaviour
 
     public void CreateRoom()
     {
-        // Zahlen aus den InputFields lesen
         int length, width, height;
 
         if (!int.TryParse(Length.text, out length) ||
@@ -48,38 +38,28 @@ public class Inputviewer : MonoBehaviour
             return;
         }
 
-        // Canvas verstecken
-        InitRoom.gameObject.SetActive(false);
-        XR.SetActive(true);
-        Destroy(cam.gameObject);
+        // Daten speichern
+        RoomData.length = length;
+        RoomData.width = width;
+        RoomData.height = height;
 
-        // Raum erstellen
-        GameObject roomInstance = Instantiate(roomPrefab, Vector3.zero, Quaternion.identity);
-
-        // Raum skalieren
-        roomInstance.transform.localScale = new Vector3(length*scaleMod, height*scaleMod, width*scaleMod);
-
-        MeshCollider col = roomInstance.AddComponent<MeshCollider>();
-
-    
+        // Szene wechseln (z.B. "RoomScene")
+        SceneManager.LoadScene("RoomScene");
     }
 
     public void CreatePreBuildRoom()
     {
-        InitRoom.gameObject.SetActive(false);
-        XR.SetActive(true);
-        Destroy(cam.gameObject);
-        PreBuildRoom.SetActive(true);
-
+        // Szene "Demo" laden
+        SceneManager.LoadScene("Demo");
     }
 
     public void ReloadScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChangeScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("RoomScene");
+        SceneManager.LoadScene("RoomScene");
     }
 }
