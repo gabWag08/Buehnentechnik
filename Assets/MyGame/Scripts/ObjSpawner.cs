@@ -9,7 +9,7 @@ public class ObjSpawner : MonoBehaviour
     public NearFarInteractor handInteractor;
 
 
-    public void SpawnObject(GameObject prefab) 
+    public void SpawnObject(GameObject prefab)
     {
         currentPrefab = prefab;
         if (currentPrefab == null)
@@ -22,6 +22,18 @@ public class ObjSpawner : MonoBehaviour
         Vector3 spawnPos = handInteractor.transform.position + handInteractor.transform.forward * 0.1f;
 
         GameObject obj = Instantiate(currentPrefab, spawnPos, Quaternion.identity);
+
+        SceneItem sceneItem = obj.GetComponent<SceneItem>();
+
+        if (sceneItem != null)
+        {
+            string type = sceneItem.itemType;
+
+            int count = SceneItemManager.Instance.GetItemsByType(type).Count + 1;
+
+            sceneItem.displayName = type + count;
+        }
+
 
         XRGrabInteractable grab = obj.GetComponent<XRGrabInteractable>();
 
