@@ -63,13 +63,4 @@ public void CreateRoom()
         SceneManager.LoadScene("Demo");
     }
 
-    public void ReloadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void ChangeScene()
-    {
-        SceneManager.LoadScene("RoomScene");
-    }
 }
