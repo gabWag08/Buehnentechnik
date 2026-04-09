@@ -8,13 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shader Graphs_ORM_Shader 1
-  m_Shader: {fileID: -6465566751694194690, guid: 0b01b76aa59dea049bf3801ac6f5cae5,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 0b01b76aa59dea049bf3801ac6f5cae5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _ALPHATEST_ON
-  m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -64,6 +63,8 @@ Material:
     - _AlphaClip: 1
     - _AlphaClipping: 0.5
     - _AlphaToMask: 1
+    - _BUILTIN_QueueControl: 0
+    - _BUILTIN_QueueOffset: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _CastShadows: 1
