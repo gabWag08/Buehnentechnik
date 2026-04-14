@@ -2495,8 +2495,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overviewParent: {fileID: 1721687770}
   detailParent: {fileID: 1289830385}
-  overviewEntryPrefab: {fileID: 5317637733028493413, guid: 70743c3afbe74394d95e800107216303, type: 3}
-  detailEntryPrefab: {fileID: 2298117102968217952, guid: e2348d92d47563847a2090a846412b6e, type: 3}
+  overviewEntryPrefab: {fileID: 8826993627148210148, guid: 70743c3afbe74394d95e800107216303, type: 3}
+  detailEntryPrefab: {fileID: 8504368511072341697, guid: 7762cc315b5372e4d823996f6550b63c, type: 3}
 --- !u!1 &2024569052
 GameObject:
   m_ObjectHideFlags: 0
