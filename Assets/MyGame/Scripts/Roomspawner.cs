@@ -3,7 +3,7 @@ using UnityEngine;
 public class RoomSpawner : MonoBehaviour
 {
     public GameObject roomPrefab;
-    private int scaleMod = 1;
+    private int scaleMod = 5;
 
     void Start()
     {
