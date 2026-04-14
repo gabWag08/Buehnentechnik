@@ -7,6 +7,7 @@ public class SceneItem : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("Registering: " + gameObject.name);
         SceneItemManager.Instance.Register(this);
     }
 

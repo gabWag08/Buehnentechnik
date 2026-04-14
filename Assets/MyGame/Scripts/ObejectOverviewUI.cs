@@ -30,6 +30,18 @@ public class ObjectOverviewUI : MonoBehaviour
         }
     }
 
+    private System.Collections.IEnumerator RefreshNextFrame()
+    {
+        yield return null; // wait 1 frame
+        RefreshOverview();
+    }
+
+    public void RefreshOverviewDelayed()
+    {
+        StartCoroutine(RefreshNextFrame());
+    }
+
+
     void ShowDetails(string type)
     {
         Clear(detailParent);
