@@ -4,7 +4,8 @@ public class ControllerMenuState : MonoBehaviour
 {
     public GameObject detailHardware;
     public GameObject detailMaterials;
-    public GameObject objectOverview;
+    public GameObject objectOverviewParent;
+    public GameObject objectOverviewDetail;
     public GameObject objectOverviewDeleteAll;
 
     void OnEnable()
@@ -16,7 +17,8 @@ public class ControllerMenuState : MonoBehaviour
     {
         detailHardware.SetActive(false);
         detailMaterials.SetActive(false);
-        objectOverview.SetActive(false);
+        objectOverviewParent.SetActive(false);
+        objectOverviewDetail.SetActive(false);
         objectOverviewDeleteAll.SetActive(false);
     }
 
@@ -24,7 +26,8 @@ public class ControllerMenuState : MonoBehaviour
     {
         detailHardware.SetActive(true);
         detailMaterials.SetActive(false);
-        objectOverview.SetActive(false);
+        objectOverviewParent.SetActive(false);
+        objectOverviewDetail.SetActive(false);
         objectOverviewDeleteAll.SetActive(false);
 
     }
@@ -33,15 +36,17 @@ public class ControllerMenuState : MonoBehaviour
     {
         detailMaterials.SetActive(true);
         detailHardware.SetActive(false);
-        objectOverview.SetActive(false);
+        objectOverviewParent.SetActive(false);
+        objectOverviewDetail.SetActive(false);
         objectOverviewDeleteAll.SetActive(false);
     }
     
     public void ShowObjectOverview()
     {
-        objectOverview.SetActive(true);
+        objectOverviewParent.SetActive(true);
         detailHardware.SetActive(false);
         detailMaterials.SetActive(false);
+        // objectOverviewDetail.SetActive(false);
         objectOverviewDeleteAll.SetActive(true);
     }
 }

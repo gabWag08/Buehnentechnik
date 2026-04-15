@@ -51,7 +51,8 @@ public class ObjectOverviewUI : MonoBehaviour
             }
 
             // Button
-            var btn = entry.GetComponent<Button>();
+            var btn = entry.GetComponentInChildren<Button>();
+
             if (btn != null)
             {
                 btn.onClick.AddListener(() => ShowDetails(type));
