@@ -124,6 +124,7 @@ public class ObjectOverviewUI : MonoBehaviour
             {
                 btn.onClick.AddListener(() =>
                 {
+                    Debug.Log("CLICKED: " + item.name);
                     StartCoroutine(Blink(item));
                 });
             }

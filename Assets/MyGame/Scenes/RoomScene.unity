@@ -1612,7 +1612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1289830385
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1680,7 +1680,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1479164423}
   - component: {fileID: 1479164424}
-  - component: {fileID: 1479164425}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1717,19 +1716,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHRTF: 0
   hrtfNames: []
---- !u!114 &1479164425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479164421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d8a526720f2f0a41b38cc30970c7dae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 0}
 --- !u!1001 &1625464835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1742,6 +1728,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 2024569053}
+    - target: {fileID: 942810691211101373, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_StartingGroupMembers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1481023794268207492, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_SizeDelta.x
       value: 90
@@ -1854,6 +1844,10 @@ PrefabInstance:
       propertyPath: FloorReference
       value: 
       objectReference: {fileID: 556797796}
+    - target: {fileID: 4778211696441940833, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_RayInteractor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4780801519528722423, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
@@ -2228,7 +2222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1721687770
 RectTransform:
   m_ObjectHideFlags: 0
