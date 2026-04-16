@@ -47,7 +47,7 @@ public class DiscordQualityMicInput : MonoBehaviour
 
     [Header("─── Soft Compressor ───────────────────")]
     public bool  enableCompressor      = true;
-    [Tooltip("Ab diesem Sample-Wert greift die Kompression (0.0–1.0)")]
+    [Tooltip("Ab diesem Sample-Wert greift die Kompression (0.0 - 1.0)")]
     public float compressorThreshold   = 0.45f;
     [Tooltip("Kompressionsverhältnis. Discord nutzt ~4:1")]
     public float compressorRatio       = 4.0f;
