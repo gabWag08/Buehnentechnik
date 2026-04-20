@@ -56,6 +56,7 @@ public class ObjectOverviewUI : MonoBehaviour
             if (btn != null)
             {
                 btn.onClick.AddListener(() => ShowDetails(type));
+                Debug.Log("Detail listener added");
             }
             else
             {
@@ -83,6 +84,7 @@ public class ObjectOverviewUI : MonoBehaviour
     // =========================
     void ShowDetails(string type)
     {
+        Debug.Log("ShowDetails is called");
         if (detailParent == null || detailEntryPrefab == null)
         {
             Debug.LogError("Detail references not assigned!");
@@ -90,6 +92,8 @@ public class ObjectOverviewUI : MonoBehaviour
         }
 
         Clear(detailParent);
+        // Enable GameObject to ensure it's active in the scene
+        detailParent.gameObject.SetActive(true);
 
         if (SceneItemManager.Instance == null)
         {
@@ -106,9 +110,11 @@ public class ObjectOverviewUI : MonoBehaviour
             if (item == null) continue;
 
             GameObject entry = Instantiate(detailEntryPrefab, detailParent);
+            Debug.Log("Detail entry instantiated");
 
             // Set Text
             var text = entry.GetComponentInChildren<TextMeshProUGUI>();
+            Debug.Log("Found TMP Text in DetailEntryPrefab");
             if (text != null)
             {
                 text.text = $"{type}{index}";
@@ -120,6 +126,7 @@ public class ObjectOverviewUI : MonoBehaviour
 
             // Button (Highlight)
             var btn = entry.GetComponent<Button>();
+            Debug.Log("Found Button in DetailEntryPrefab");
             if (btn != null)
             {
                 btn.onClick.AddListener(() =>

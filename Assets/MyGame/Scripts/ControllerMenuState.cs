@@ -46,7 +46,6 @@ public class ControllerMenuState : MonoBehaviour
         objectOverviewParent.SetActive(true);
         detailHardware.SetActive(false);
         detailMaterials.SetActive(false);
-        // objectOverviewDetail.SetActive(false);
         objectOverviewDeleteAll.SetActive(true);
     }
 }
