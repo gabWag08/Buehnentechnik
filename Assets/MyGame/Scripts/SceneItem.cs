@@ -6,10 +6,13 @@ public class SceneItem : MonoBehaviour
     public string displayName; // "Speaker1", "Speaker2"
 
     private void OnEnable()
+{
+    if (SceneItemManager.Instance != null)
     {
         Debug.Log("Registering: " + gameObject.name);
         SceneItemManager.Instance.Register(this);
     }
+}
 
     private void OnDisable()
     {
