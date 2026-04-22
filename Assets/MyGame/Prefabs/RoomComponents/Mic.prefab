@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 6307174135254821160}
   - component: {fileID: 2291426886733621274}
   - component: {fileID: -4193715237642237421}
+  - component: {fileID: -426250368803728183}
   m_Layer: 0
   m_Name: Mic
   m_TagString: Untagged
@@ -370,3 +371,17 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!114 &-426250368803728183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100395165063399708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: Microphone
+  displayName: 

@@ -1808,6 +1808,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -9.600067
       objectReference: {fileID: 0}
+    - target: {fileID: 2598020685238748812, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2628319662251920014, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -1839,6 +1843,10 @@ PrefabInstance:
     - target: {fileID: 3166014121804844932, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 40.399933
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233036817978192541, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0979
       objectReference: {fileID: 0}
     - target: {fileID: 3799177168297079243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_IsActive
@@ -1931,6 +1939,10 @@ PrefabInstance:
     - target: {fileID: 7281207085628130718, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_fontSizeBase
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429948573488055193, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7880068337505434388, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y

@@ -110,34 +110,43 @@ public class ObjectOverviewUI : MonoBehaviour
             if (item == null) continue;
 
             GameObject entry = Instantiate(detailEntryPrefab, detailParent);
-            Debug.Log("Detail entry instantiated");
 
-            // Set Text
+            // TEXT
             var text = entry.GetComponentInChildren<TextMeshProUGUI>();
-            Debug.Log("Found TMP Text in DetailEntryPrefab");
             if (text != null)
             {
-                text.text = $"{type}{index}";
-            }
-            else
-            {
-                Debug.LogError("No TMP Text found in DetailEntryPrefab!");
+                text.text = $"{index}. {item.displayName}"; // better than type+index
             }
 
-            // Button (Highlight)
-            var btn = entry.GetComponent<Button>();
-            Debug.Log("Found Button in DetailEntryPrefab");
+            // SELECT (Blink)
+            var btn = entry.GetComponentInChildren<Button>();
             if (btn != null)
             {
                 btn.onClick.AddListener(() =>
                 {
-                    Debug.Log("CLICKED: " + item.name);
                     StartCoroutine(Blink(item));
                 });
             }
 
+            // DELETE BUTTON (IMPORTANT)
+            Transform deleteTransform = entry.transform.Find("DeleteButton");
+
+            if (deleteTransform != null)
+            {
+                Button deleteBtn = deleteTransform.GetComponent<Button>();
+
+                deleteBtn.onClick.AddListener(() =>
+                {
+                    Destroy(item.gameObject);
+
+                    // Refresh UI
+                    RefreshOverview();
+                    ShowDetails(type);
+                });
+            }
             index++;
         }
+
     }
 
     // =========================
