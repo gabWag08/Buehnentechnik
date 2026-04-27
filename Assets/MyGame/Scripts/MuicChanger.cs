@@ -12,42 +12,51 @@ public class MuicChanger : MonoBehaviour
     public VideoClip videoclip;
     public VideoClip videoclip2;
 
-    public AudioSource audioSource;
-    public AudioSource audioSource2;
-    public AudioSource audioSource3;
-    public AudioSource audioSource4;
-    //VideoPlayer
+    private AudioSource[] speakers;
+
     public VideoPlayer videoPlayer;
+
+    void Start()
+    {
+        // Alle GameObjects mit dem Tag "SPeaker" finden
+        GameObject[] speakerObjects = GameObject.FindGameObjectsWithTag("Speaker");
+
+        // AudioSources daraus holen
+        speakers = new AudioSource[speakerObjects.Length];
+
+        for (int i = 0; i < speakerObjects.Length; i++)
+        {
+            speakers[i] = speakerObjects[i].GetComponent<AudioSource>();
+        }
+    }
 
     public void ChangeSong1()
     {
-        audioSource.clip = audioClip;
-        audioSource.Play();
-        audioSource2.clip = audioClip;
-        audioSource2.Play();
-        audioSource3.clip = audioClip;
-        audioSource3.Play();
-        audioSource4.clip = audioClip;
-        audioSource4.Play();
-    
+        foreach (AudioSource source in speakers)
+        {
+            if (source != null)
+            {
+                source.clip = audioClip;
+                source.Play();
+            }
+        }
+
         videoPlayer.clip = videoclip;
         videoPlayer.Play();
-    
     }
 
     public void ChangeSong2()
     {
-        audioSource.clip = audioClip2;
-        audioSource.Play();
-        audioSource2.clip = audioClip2;
-        audioSource2.Play();
-        audioSource3.clip = audioClip2;
-        audioSource3.Play();
-        audioSource4.clip = audioClip2;
-        audioSource4.Play();
+        foreach (AudioSource source in speakers)
+        {
+            if (source != null)
+            {
+                source.clip = audioClip2;
+                source.Play();
+            }
+        }
 
         videoPlayer.clip = videoclip2;
         videoPlayer.Play();
     }
-    
 }
