@@ -12,6 +12,8 @@ public class VRNumpad : MonoBehaviour
     public InputField width;
     public InputField length;
 
+    public TMP_InputField currentField;
+
     public void AddDigit(string digit)
     {
         inputField.text += digit;
@@ -42,8 +44,6 @@ public class VRNumpad : MonoBehaviour
         Debug.Log("Entered Value: " + value);
 
     }
-
-    public TMP_InputField currentField;
 
     public void SetActiveField(TMP_InputField field)
     {
