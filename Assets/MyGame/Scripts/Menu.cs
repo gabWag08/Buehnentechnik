@@ -15,6 +15,8 @@ public class Inputviewer : MonoBehaviour
     public Button Createbutton;
     public Button Prebutton;
 
+    public GameObject InputPanel;
+
     public void MakeVisible()
     {
         Createbutton.gameObject.SetActive(true);
@@ -26,36 +28,36 @@ public class Inputviewer : MonoBehaviour
         panel.SetActive(true);
     }
 
-public void CreateRoom()
-{
-    int length, width, height;
-
-    if (!int.TryParse(Length.text, out length) ||
-        !int.TryParse(Width.text, out width) ||
-        !int.TryParse(Height.text, out height))
+    public void CreateRoom()
     {
-        Debug.LogError("Bitte gültige Zahlen eingeben!");
-        return;
+        int length, width, height;
+
+        if (!int.TryParse(Length.text, out length) ||
+            !int.TryParse(Width.text, out width) ||
+            !int.TryParse(Height.text, out height))
+        {
+            Debug.LogError("Bitte gültige Zahlen eingeben!");
+            return;
+        }
+
+        // Objekt erstellen
+        RoomData data = new RoomData
+        {
+            length = length,
+            width = width,
+            height = height
+        };
+
+        // In JSON umwandeln
+        string json = JsonUtility.ToJson(data);
+
+        // Speichern
+        PlayerPrefs.SetString("RoomData", json);
+        PlayerPrefs.Save();
+
+        // Szene wechseln
+        SceneManager.LoadScene("CreateScene");
     }
-
-    // Objekt erstellen
-    RoomData data = new RoomData
-    {
-        length = length,
-        width = width,
-        height = height
-    };
-
-    // In JSON umwandeln
-    string json = JsonUtility.ToJson(data);
-
-    // Speichern
-    PlayerPrefs.SetString("RoomData", json);
-    PlayerPrefs.Save();
-
-    // Szene wechseln
-    SceneManager.LoadScene("CreateScene");
-}
 
     public void CreatePreBuildRoom()
     {

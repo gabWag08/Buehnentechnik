@@ -1,52 +1,63 @@
 using TMPro;
 using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
 
 public class VRNumpad : MonoBehaviour
 {
-    public TMP_InputField inputField;
+    public TMP_InputField currentField;
 
-    // Input Displays
-    public InputField height;
-    public InputField width;
-    public InputField length;
+    public GameObject Numpad;
+
+
+    private void Start() =>
+    Numpad.SetActive(false);
 
     public void AddDigit(string digit)
     {
-        inputField.text += digit;
+        if (currentField == null) return;
+
+        // Prevent multiple dots
+        if (digit == "." && currentField.text.Contains(".")) return;
+
+        currentField.text += digit;
     }
 
     public void Backspace()
     {
-        if (inputField.text.Length > 0)
+        if (currentField == null) return;
+
+        if (currentField.text.Length > 0)
         {
-            inputField.text = inputField.text.Substring(0, inputField.text.Length - 1);
+            currentField.text = currentField.text.Substring(0, currentField.text.Length - 1);
         }
     }
 
     public void Clear()
     {
-        inputField.text = "";
+        if (currentField == null) return;
+
+        currentField.text = "";
     }
 
     public float GetValue()
     {
-        float.TryParse(inputField.text, out float value);
+        if (currentField == null) return 0;
+
+        float.TryParse(currentField.text, out float value);
         return value;
     }
 
     public void Confirm()
     {
-        float value = GetValue();
-        Debug.Log("Entered Value: " + value);
-
+        Debug.Log("Height: " + GetValue());
     }
-
-    public TMP_InputField currentField;
 
     public void SetActiveField(TMP_InputField field)
     {
         currentField = field;
+        Debug.Log("Active Field: " + field.name);
+
+        Numpad.SetActive(true);
+
+        field.image.color = Color.yellow;
     }
 }
