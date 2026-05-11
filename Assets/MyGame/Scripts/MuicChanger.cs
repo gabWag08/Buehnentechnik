@@ -1,27 +1,25 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Video;
 
-public class MuicChanger : MonoBehaviour
+public class MusicChanger : MonoBehaviour
 {
-    public Button button;
-    public Button button2;
-
-    public AudioClip audioClip;
+    public AudioClip audioClip1;
     public AudioClip audioClip2;
-    public VideoClip videoclip;
-    public VideoClip videoclip2;
 
-    private AudioSource[] speakers;
+    public VideoClip videoClip1;
+    public VideoClip videoClip2;
 
     public VideoPlayer videoPlayer;
 
+    private AudioSource[] speakers;
+
+    // REFERENZ ZU DEINEM SAVE SYSTEM
+    public SaveToJson saveSystem;
+
     void Start()
     {
-        // Alle GameObjects mit dem Tag "SPeaker" finden
         GameObject[] speakerObjects = GameObject.FindGameObjectsWithTag("Speaker");
 
-        // AudioSources daraus holen
         speakers = new AudioSource[speakerObjects.Length];
 
         for (int i = 0; i < speakerObjects.Length; i++)
@@ -30,33 +28,70 @@ public class MuicChanger : MonoBehaviour
         }
     }
 
+    // =====================================================
+    // SONG 1
+    // =====================================================
     public void ChangeSong1()
     {
-        foreach (AudioSource source in speakers)
-        {
-            if (source != null)
-            {
-                source.clip = audioClip;
-                source.Play();
-            }
-        }
+        Debug.Log("SWITCH TO SONG 1");
 
-        videoPlayer.clip = videoclip;
-        videoPlayer.Play();
+        SwitchAllSpeakers(audioClip1);
+
+        if (videoPlayer != null)
+        {
+            videoPlayer.clip = videoClip1;
+            videoPlayer.Play();
+        }
     }
 
+    // =====================================================
+    // SONG 2
+    // =====================================================
     public void ChangeSong2()
+    {
+        Debug.Log("SWITCH TO SONG 2");
+
+        SwitchAllSpeakers(audioClip2);
+
+        if (videoPlayer != null)
+        {
+            videoPlayer.clip = videoClip2;
+            videoPlayer.Play();
+        }
+    }
+
+    // =====================================================
+    // CORE SWITCH LOGIC
+    // =====================================================
+    private void SwitchAllSpeakers(AudioClip newClip)
     {
         foreach (AudioSource source in speakers)
         {
-            if (source != null)
+            if (source == null) continue;
+
+            // WICHTIG: alten Song sauber stoppen + loggen
+            if (source.isPlaying)
             {
-                source.clip = audioClip2;
-                source.Play();
+                if (saveSystem != null)
+                {
+                    saveSystem.StopSound(source);
+                }
+
+                source.Stop();
+                Debug.Log("STOP OLD: " + source.clip?.name);
+            }
+
+            // neuen Song setzen
+            source.clip = newClip;
+            source.Play();
+
+            Debug.Log("PLAY NEW: " + newClip.name);
+
+            // START loggen
+            if (saveSystem != null)
+            {
+                saveSystem.PlaySound(source);
             }
         }
-
-        videoPlayer.clip = videoclip2;
-        videoPlayer.Play();
     }
 }
