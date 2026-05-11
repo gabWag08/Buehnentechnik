@@ -118,6 +118,10 @@ public class ObjectOverviewUI : MonoBehaviour
                 text.text = $"{index}. {item.displayName}"; // better than type+index
             }
 
+            else
+            {
+                Debug.LogError("No TMP Text found in DetailEntryPrefab!");
+            }
             // SELECT (Blink)
             var btn = entry.GetComponentInChildren<Button>();
             if (btn != null)

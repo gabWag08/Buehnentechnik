@@ -7,6 +7,7 @@ public class ControllerMenuState : MonoBehaviour
     public GameObject objectOverviewParent;
     public GameObject objectOverviewDetail;
     public GameObject objectOverviewDeleteAll;
+    public GameObject xrScalling;
 
     void OnEnable()
     {
@@ -20,6 +21,7 @@ public class ControllerMenuState : MonoBehaviour
         objectOverviewParent.SetActive(false);
         objectOverviewDetail.SetActive(false);
         objectOverviewDeleteAll.SetActive(false);
+        xrScalling.SetActive(false);
     }
 
     public void ShowHardware()
@@ -29,7 +31,7 @@ public class ControllerMenuState : MonoBehaviour
         objectOverviewParent.SetActive(false);
         objectOverviewDetail.SetActive(false);
         objectOverviewDeleteAll.SetActive(false);
-
+        xrScalling.SetActive(false);
     }
 
     public void ShowMaterials()
@@ -39,6 +41,7 @@ public class ControllerMenuState : MonoBehaviour
         objectOverviewParent.SetActive(false);
         objectOverviewDetail.SetActive(false);
         objectOverviewDeleteAll.SetActive(false);
+        xrScalling.SetActive(false);
     }
     
     public void ShowObjectOverview()
@@ -47,5 +50,16 @@ public class ControllerMenuState : MonoBehaviour
         detailHardware.SetActive(false);
         detailMaterials.SetActive(false);
         objectOverviewDeleteAll.SetActive(true);
+        xrScalling.SetActive(false);
+    }
+
+    public void ShowXRScalling()
+    {
+        xrScalling.SetActive(true);
+        detailHardware.SetActive(false);
+        detailMaterials.SetActive(false);
+        objectOverviewParent.SetActive(false);
+        objectOverviewDetail.SetActive(false);
+        objectOverviewDeleteAll.SetActive(false);
     }
 }
