@@ -1,36 +1,25 @@
 using UnityEngine;
 using UnityEngine.Video;
+using System.Collections.Generic;
 
 public class MusicChanger : MonoBehaviour
 {
+    [Header("Audio Clips")]
     public AudioClip audioClip1;
     public AudioClip audioClip2;
 
+    [Header("Video Clips")]
     public VideoClip videoClip1;
     public VideoClip videoClip2;
 
     public VideoPlayer videoPlayer;
 
-    private AudioSource[] speakers;
-
-    // REFERENZ ZU DEINEM SAVE SYSTEM
+    [Header("Save System")]
     public SaveToJson saveSystem;
 
-    void Start()
-    {
-        GameObject[] speakerObjects = GameObject.FindGameObjectsWithTag("Speaker");
-
-        speakers = new AudioSource[speakerObjects.Length];
-
-        for (int i = 0; i < speakerObjects.Length; i++)
-        {
-            speakers[i] = speakerObjects[i].GetComponent<AudioSource>();
-        }
-    }
-
-    // =====================================================
+    // =========================
     // SONG 1
-    // =====================================================
+    // =========================
     public void ChangeSong1()
     {
         Debug.Log("SWITCH TO SONG 1");
@@ -44,9 +33,9 @@ public class MusicChanger : MonoBehaviour
         }
     }
 
-    // =====================================================
+    // =========================
     // SONG 2
-    // =====================================================
+    // =========================
     public void ChangeSong2()
     {
         Debug.Log("SWITCH TO SONG 2");
@@ -60,38 +49,50 @@ public class MusicChanger : MonoBehaviour
         }
     }
 
-    // =====================================================
-    // CORE SWITCH LOGIC
-    // =====================================================
+    // =========================
+    // CORE LOGIC (SceneItem System)
+    // =========================
     private void SwitchAllSpeakers(AudioClip newClip)
     {
-        foreach (AudioSource source in speakers)
+        if (SceneItemManager.Instance == null)
         {
-            if (source == null) continue;
+            Debug.LogWarning("SceneItemManager nicht gefunden!");
+            return;
+        }
 
-            // WICHTIG: alten Song sauber stoppen + loggen
+        // Alle Items vom Typ "Speaker" holen
+        List<SceneItem> speakers =
+            SceneItemManager.Instance.GetItemsByType("Speaker");
+
+        foreach (SceneItem item in speakers)
+        {
+            if (item == null) continue;
+
+            AudioSource source = item.audioSource;
+
+            if (source == null)
+                continue;
+
+            // Alten Sound stoppen
             if (source.isPlaying)
             {
                 if (saveSystem != null)
-                {
                     saveSystem.StopSound(source);
-                }
 
                 source.Stop();
+
                 Debug.Log("STOP OLD: " + source.clip?.name);
             }
 
-            // neuen Song setzen
+            // Neuen Clip setzen
             source.clip = newClip;
             source.Play();
 
             Debug.Log("PLAY NEW: " + newClip.name);
 
-            // START loggen
+            // Save System
             if (saveSystem != null)
-            {
                 saveSystem.PlaySound(source);
-            }
         }
     }
 }

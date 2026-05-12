@@ -4,56 +4,14 @@ using UnityEngine.Video;
 using System.Collections.Generic;
 using System.IO;
 
-//-------------------------------
-// JSON-File wird hier gespeichert:
-// C:\Users\gabri\AppData\LocalLow\DefaultCompany\Bühnentechnik
-//-------------------------------
-
 public class SaveToJson : MonoBehaviour
 {
     [Header("Video")]
     public VideoPlayer videoPlayer;
 
-    [Header("Slider Parent")]
-    public Transform sliderParent;
-
-    private AudioSource[] speakers;
-    private Slider[] sliders;
-
     // ---------------- AUDIO HISTORY ----------------
     private Dictionary<AudioSource, float> activeStartTimes = new Dictionary<AudioSource, float>();
     private List<AudioHistoryEntry> playHistory = new List<AudioHistoryEntry>();
-
-    void Start()
-    {
-        Debug.Log("SaveToJson START");
-
-        GameObject[] speakerObjects = GameObject.FindGameObjectsWithTag("Speaker");
-
-        Debug.Log("Speakers found: " + speakerObjects.Length);
-
-        speakers = new AudioSource[speakerObjects.Length];
-
-        for (int i = 0; i < speakerObjects.Length; i++)
-        {
-            speakers[i] = speakerObjects[i].GetComponent<AudioSource>();
-
-            if (speakers[i] != null)
-                Debug.Log("Loaded speaker: " + speakers[i].name);
-            else
-                Debug.LogWarning("Missing AudioSource on speaker " + i);
-        }
-
-        if (sliderParent != null)
-        {
-            sliders = sliderParent.GetComponentsInChildren<Slider>(true);
-            Debug.Log("Sliders found: " + sliders.Length);
-        }
-        else
-        {
-            Debug.LogWarning("SliderParent not set!");
-        }
-    }
 
     // =====================================================
     // AUDIO CONTROL API (WIRD VON MUSICCHANGER GENUTZT)
@@ -63,8 +21,6 @@ public class SaveToJson : MonoBehaviour
     {
         if (source == null || source.clip == null) return;
 
-        Debug.Log("PlaySound: " + source.clip.name);
-
         activeStartTimes[source] = Time.time;
     }
 
@@ -72,13 +28,8 @@ public class SaveToJson : MonoBehaviour
     {
         if (source == null || source.clip == null) return;
 
-        Debug.Log("StopSound: " + source.clip.name);
-
         if (!activeStartTimes.ContainsKey(source))
-        {
-            Debug.LogWarning("Stop ohne Start: " + source.clip.name);
             return;
-        }
 
         float start = activeStartTimes[source];
         float end = Time.time;
@@ -90,10 +41,6 @@ public class SaveToJson : MonoBehaviour
 
         playHistory.Add(entry);
 
-        Debug.Log("HISTORY ADDED: " + entry.clipName +
-                  " | " + start + " → " + end +
-                  " (" + (end - start) + "s)");
-
         activeStartTimes.Remove(source);
     }
 
@@ -103,8 +50,6 @@ public class SaveToJson : MonoBehaviour
 
     public void SaveData()
     {
-        Debug.Log("SAVE START");
-
         GameData data = new GameData();
 
         // ---------------- VIDEO ----------------
@@ -113,18 +58,22 @@ public class SaveToJson : MonoBehaviour
             data.videoName = videoPlayer.clip != null ? videoPlayer.clip.name : "None";
             data.videoTime = videoPlayer.time;
             data.videoIsPlaying = videoPlayer.isPlaying;
-
-            Debug.Log("🎬 Video saved: " + data.videoName + " | time: " + data.videoTime);
         }
 
         // ---------------- AUDIO STATES ----------------
         data.audioStates = new List<AudioState>();
 
-        if (speakers != null)
+        if (SceneItemManager.Instance != null)
         {
-            foreach (AudioSource source in speakers)
+            List<SceneItem> speakers =
+                SceneItemManager.Instance.GetItemsByType("Speaker");
+
+            foreach (SceneItem item in speakers)
             {
-                if (source == null) continue;
+                if (item == null) continue;
+                if (item.audioSource == null) continue;
+
+                AudioSource source = item.audioSource;
 
                 AudioState state = new AudioState();
 
@@ -138,36 +87,11 @@ public class SaveToJson : MonoBehaviour
                 state.spatialBlend = source.spatialBlend;
 
                 data.audioStates.Add(state);
-
-                Debug.Log("State saved: " + state.clipName +
-                          " | playing: " + state.isPlaying +
-                          " | time: " + state.time);
-            }
-        }
-
-        // ---------------- SLIDERS ----------------
-        data.sliderValues = new List<float>();
-
-        if (sliders != null)
-        {
-            for (int i = 0; i < sliders.Length; i++)
-            {
-                data.sliderValues.Add(sliders[i].value);
-                Debug.Log("Slider " + i + ": " + sliders[i].value);
             }
         }
 
         // ---------------- HISTORY ----------------
         data.playHistory = new List<AudioHistoryEntry>(playHistory);
-
-        Debug.Log("History count: " + data.playHistory.Count);
-
-        foreach (var h in data.playHistory)
-        {
-            Debug.Log("ENTRY: " + h.clipName +
-                      " | " + h.startTime +
-                      " → " + h.endTime);
-        }
 
         // ---------------- SAVE FILE ----------------
         string json = JsonUtility.ToJson(data, true);
@@ -189,8 +113,6 @@ public class GameData
     public string videoName;
     public double videoTime;
     public bool videoIsPlaying;
-
-    public List<float> sliderValues;
 
     public List<AudioHistoryEntry> playHistory;
 }
