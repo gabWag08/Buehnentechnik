@@ -918,6 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 262042677}
   itemType: Speaker
   displayName: Speaker3
 --- !u!114 &262042679
@@ -2785,6 +2786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1259744616}
   itemType: Speaker
   displayName: Speaker4
 --- !u!114 &1259744618
@@ -3668,9 +3670,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4222116222524584363}
+  - {fileID: 1993442379}
   - {fileID: 262042675}
   - {fileID: 1259744614}
-  - {fileID: 1993442379}
   - {fileID: 4471282469337064954}
   - {fileID: 2447860034751589756}
   - {fileID: 1462742912543883924}
@@ -4676,6 +4678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1993442381}
   itemType: Speaker
   displayName: Speaker2
 --- !u!114 &1993442383
@@ -9774,6 +9777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 5661995322864833944}
   itemType: Speaker
   displayName: Speaker1
 --- !u!114 &5661995322864833946

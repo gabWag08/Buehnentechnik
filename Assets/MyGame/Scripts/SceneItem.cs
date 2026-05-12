@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class SceneItem : MonoBehaviour
 {
+    [Header("Optional")]
+    public AudioSource audioSource;
+
     public string itemType; // "Speaker", "Microphone", etc.
     public string displayName; // "Speaker1", "Speaker2"
+
 
     private void OnEnable()
 {

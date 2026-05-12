@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Falls du TextMeshPro benutzt
+using TMPro;
 
 public class SceneItemManager : MonoBehaviour
 {
@@ -19,6 +19,10 @@ public class SceneItemManager : MonoBehaviour
     {
         Instance = this;
     }
+
+    // =========================
+    // REGISTRATION
+    // =========================
 
     public void Register(SceneItem item)
     {
@@ -81,28 +85,68 @@ public class SceneItemManager : MonoBehaviour
 
     void CreateUI(SceneItem item)
     {
+        if (item.audioSource == null)
+        {
+            Debug.LogWarning("SceneItem hat keine AudioSource: " + item.displayName);
+            return;
+        }
+
         GameObject uiObj = Instantiate(sliderPrefab, sliderParent);
         itemUI[item] = uiObj;
 
-        Slider slider = uiObj.GetComponentInChildren<Slider>();
+        // Slider finden
+        Slider[] sliders = uiObj.GetComponentsInChildren<Slider>();
 
-        // Text setzen (Name anzeigen)
+        Slider volumeSlider = null;
+        Slider pitchSlider = null;
+
+        foreach (var s in sliders)
+        {
+            if (s.name.ToLower().Contains("volume"))
+                volumeSlider = s;
+
+            if (s.name.ToLower().Contains("pitch"))
+                pitchSlider = s;
+        }
+
+        // Text setzen
         TMP_Text text = uiObj.GetComponentInChildren<TMP_Text>();
         if (text != null)
         {
             text.text = item.displayName + " (" + item.itemType + ")";
         }
 
-        // Beispielwerte
-        if (slider != null)
-        {
-            slider.minValue = 0;
-            slider.maxValue = 1;
-            slider.value = 0.5f;
+        AudioSource audio = item.audioSource;
 
-            slider.onValueChanged.AddListener((value) =>
+        // =========================
+        // VOLUME
+        // =========================
+        if (volumeSlider != null)
+        {
+            volumeSlider.minValue = 0f;
+            volumeSlider.maxValue = 1f;
+            volumeSlider.value = audio.volume;
+
+            volumeSlider.onValueChanged.AddListener((value) =>
             {
-                Debug.Log(item.displayName + " Slider: " + value);
+                if (audio != null)
+                    audio.volume = value;
+            });
+        }
+
+        // =========================
+        // PITCH
+        // =========================
+        if (pitchSlider != null)
+        {
+            pitchSlider.minValue = 0.5f;
+            pitchSlider.maxValue = 2f;
+            pitchSlider.value = audio.pitch;
+
+            pitchSlider.onValueChanged.AddListener((value) =>
+            {
+                if (audio != null)
+                    audio.pitch = value;
             });
         }
     }
