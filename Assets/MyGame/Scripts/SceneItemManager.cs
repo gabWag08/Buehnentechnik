@@ -99,6 +99,7 @@ public class SceneItemManager : MonoBehaviour
 
         Slider volumeSlider = null;
         Slider pitchSlider = null;
+        Slider stereoPanSlider = null;
 
         foreach (var s in sliders)
         {
@@ -107,6 +108,8 @@ public class SceneItemManager : MonoBehaviour
 
             if (s.name.ToLower().Contains("pitch"))
                 pitchSlider = s;
+            if(s.name.ToLower().Contains("stereopan"))
+                stereoPanSlider = s;
         }
 
         // Text setzen
@@ -149,6 +152,24 @@ public class SceneItemManager : MonoBehaviour
                     audio.pitch = value;
             });
         }
+
+        //==========================
+        // Stereo Pan
+        //==========================
+
+        if(stereoPanSlider != null)
+        {
+            stereoPanSlider.minValue = -1f;
+            stereoPanSlider.maxValue = 1f;
+            stereoPanSlider.value = audio.panStereo;
+
+            stereoPanSlider.onValueChanged.AddListener((value) =>
+            {
+                if (audio != null)
+                    audio.panStereo = value;
+            });
+        }
+        
     }
 
     void RemoveUI(SceneItem item)
