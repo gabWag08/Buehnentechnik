@@ -111,11 +111,11 @@ public class DiscordQualityMicInput : MonoBehaviour
         if (Microphone.devices.Length > 0)
         {
             micName = Microphone.devices[0];
-            Debug.Log("✅ Mikrofon gefunden: " + micName);
+            Debug.Log("Mikrofon gefunden: " + micName);
         }
         else
         {
-            Debug.LogError("❌ Kein Mikrofon gefunden!");
+            Debug.LogError("Kein Mikrofon gefunden!");
         }
     }
 
@@ -137,7 +137,7 @@ public class DiscordQualityMicInput : MonoBehaviour
 
         if (mixer == null)
         {
-            Debug.LogWarning($"⚠️ AudioMixer '{mixerResourceName}' nicht in Resources gefunden.\n" +
+            Debug.LogWarning($"AudioMixer '{mixerResourceName}' nicht in Resources gefunden.\n" +
                              "→ Erstelle ihn unter Assets/Resources/" + mixerResourceName + ".mixer");
             return;
         }
@@ -146,12 +146,12 @@ public class DiscordQualityMicInput : MonoBehaviour
 
         if (groups.Length == 0)
         {
-            Debug.LogWarning($"⚠️ Mixer-Group '{mixerGroupName}' nicht im Mixer '{mixerResourceName}' gefunden.");
+            Debug.LogWarning($"Mixer-Group '{mixerGroupName}' nicht im Mixer '{mixerResourceName}' gefunden.");
             return;
         }
 
         audioSource.outputAudioMixerGroup = groups[0];
-        Debug.Log($"✅ AudioMixer '{mixerResourceName}' → Group '{mixerGroupName}' zugewiesen.");
+        Debug.Log($"AudioMixer '{mixerResourceName}' → Group '{mixerGroupName}' zugewiesen.");
     }
 
     // ── Push-To-Talk ───────────────────────────────────────────────────────────
@@ -192,7 +192,7 @@ public class DiscordQualityMicInput : MonoBehaviour
         System.Array.Clear(hpPrevX, 0, hpPrevX.Length);
         System.Array.Clear(hpPrevY, 0, hpPrevY.Length);
 
-        Debug.Log($"🎤 Aufnahme gestartet @ {freq} Hz");
+        Debug.Log($"Aufnahme gestartet @ {freq} Hz");
     }
 
     void StopTalking()
@@ -202,7 +202,7 @@ public class DiscordQualityMicInput : MonoBehaviour
         gateOpen  = false;
         audioSource.Stop();
         Microphone.End(micName);
-        Debug.Log("🔇 Aufnahme gestoppt");
+        Debug.Log("Aufnahme gestoppt");
     }
 
     // ── Audio DSP Pipeline (Audio Thread – kein GC erlaubt!) ──────────────────
@@ -354,7 +354,7 @@ public class DiscordQualityMicInput : MonoBehaviour
         if (!isTalking) return;
         GUI.Label(new Rect(10, 10, 300, 20), $"RMS:  {sharedRMS:F4}");
         GUI.Label(new Rect(10, 30, 300, 20), $"Gain: {sharedGain:F2}x");
-        GUI.Label(new Rect(10, 50, 300, 20), $"Gate: {(gateOpen ? "OPEN 🟢" : "CLOSED 🔴")}");
+        GUI.Label(new Rect(10, 50, 300, 20), $"Gate: {(gateOpen ? "OPEN" : "CLOSED")}");
 #endif
     }
 }
