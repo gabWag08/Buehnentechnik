@@ -1,5 +1,7 @@
 using SteamAudio;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
 public class MaterialApplicator : MonoBehaviour
 {
@@ -13,7 +15,15 @@ public class MaterialApplicator : MonoBehaviour
     private Renderer highlightedRenderer;
     private Color originalColor;
 
-    void Update()
+    public InputActionReference applyAction;
+
+
+    private void Start()
+    {
+        if (previewSphere != null) previewSphere.gameObject.SetActive(false);
+    }
+
+    private void Update()
     {
         UnityEngine.Ray ray = new UnityEngine.Ray(controller.position, controller.forward);
 
@@ -25,8 +35,12 @@ public class MaterialApplicator : MonoBehaviour
             {
                 Highlight(rend);
 
-                if (Input.GetButtonDown("Fire1"))
+                InputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
+                if (rightHand.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerPressed) && triggerPressed)
                 {
+                    Debug.Log("TRIGGER PRESSED");
+
                     ApplyMaterial(hit.collider.gameObject);
                 }
             }
@@ -42,6 +56,7 @@ public class MaterialApplicator : MonoBehaviour
         currentMaterial = mat;
 
         previewSphere.material.color = mat.previewColor;
+        previewSphere.gameObject.SetActive(true);
     }
 
     void ApplyMaterial(GameObject obj)

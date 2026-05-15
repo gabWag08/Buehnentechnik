@@ -1641,6 +1641,7 @@ MonoBehaviour:
   objectOverviewParent: {fileID: 533065588628115959}
   objectOverviewDetail: {fileID: 1753557959225582691}
   objectOverviewDeleteAll: {fileID: 2789951717299706380}
+  xrScalling: {fileID: 0}
 --- !u!1 &1470279098769358944
 GameObject:
   m_ObjectHideFlags: 0
