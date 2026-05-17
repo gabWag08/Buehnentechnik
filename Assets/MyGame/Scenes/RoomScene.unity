@@ -1739,6 +1739,7 @@ MonoBehaviour:
     m_Bits: 64
   rayDistance: 10
   previewSphere: {fileID: 242248945}
+  isGunActive: 1
 --- !u!4 &2006281765
 Transform:
   m_ObjectHideFlags: 0
