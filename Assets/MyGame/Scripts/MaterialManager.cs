@@ -1,33 +1,67 @@
 using SteamAudio;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class MaterialApplicator : MonoBehaviour
 {
+    [Header("Current Material")]
     public SteamAudioMaterialData currentMaterial;
 
+    [Header("References")]
     public Transform controller;
-    public LayerMask applyLayer;
+    public NearFarInteractor rightInteractor;
+    public InputActionReference triggerAction;
 
+
+    [Header("Raycast")]
+    public LayerMask applyLayer;
+    public float rayDistance = 10f;
+
+    [Header("Visual Feedback")]
     public Renderer previewSphere;
+
+    [Header("Gun State")]
+    public bool isGunActive = true;
 
     private Renderer highlightedRenderer;
     private Color originalColor;
 
-    public InputActionReference applyAction;
+    // Trigger detection
+    private bool wasSelectingLastFrame;
 
-
-    private void Start()
+    void Start()
     {
-        if (previewSphere != null) previewSphere.gameObject.SetActive(false);
+        // Hide preview sphere at start
+        if (previewSphere != null)
+        {
+            previewSphere.gameObject.SetActive(false);
+        }
     }
 
-    private void Update()
+    void Update()
     {
+        if (!isGunActive)
+        {
+            ClearHighlight();
+            wasSelectingLastFrame = false;
+            return;
+        }
+        // No material selected → do nothing
+        if (currentMaterial == null)
+        {
+            ClearHighlight();
+            return;
+        }
+
+        // Create ray from controller forward
         UnityEngine.Ray ray = new UnityEngine.Ray(controller.position, controller.forward);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 10f, applyLayer))
+        // Debug Ray in Scene View
+        Debug.DrawRay(controller.position, controller.forward * rayDistance, Color.red);
+
+        // Check if ray hits valid object
+        if (Physics.Raycast(ray, out RaycastHit hit, rayDistance, applyLayer))
         {
             Renderer rend = hit.collider.GetComponent<Renderer>();
 
@@ -35,14 +69,19 @@ public class MaterialApplicator : MonoBehaviour
             {
                 Highlight(rend);
 
-                InputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+                // Check trigger press
+                bool isSelecting = triggerAction.action.IsPressed();
 
-                if (rightHand.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerPressed) && triggerPressed)
+                // Trigger pressed THIS frame
+                if (isSelecting && !wasSelectingLastFrame)
                 {
                     Debug.Log("TRIGGER PRESSED");
 
                     ApplyMaterial(hit.collider.gameObject);
                 }
+
+                // Save previous trigger state
+                wasSelectingLastFrame = isSelecting;
             }
         }
         else
@@ -51,14 +90,26 @@ public class MaterialApplicator : MonoBehaviour
         }
     }
 
+    // =========================
+    // MATERIAL SELECTION
+    // =========================
     public void SelectMaterial(SteamAudioMaterialData mat)
     {
         currentMaterial = mat;
 
-        previewSphere.material.color = mat.previewColor;
-        previewSphere.gameObject.SetActive(true);
+        Debug.Log("Selected Material: " + mat.materialName);
+
+        // Show preview sphere
+        if (previewSphere != null)
+        {
+            previewSphere.gameObject.SetActive(true);
+            previewSphere.material.color = mat.previewColor;
+        }
     }
 
+    // =========================
+    // APPLY MATERIAL
+    // =========================
     void ApplyMaterial(GameObject obj)
     {
         SteamAudioGeometry geo = obj.GetComponent<SteamAudioGeometry>();
@@ -67,17 +118,36 @@ public class MaterialApplicator : MonoBehaviour
         {
             geo.material = currentMaterial.steamAudioMaterial;
 
-            Debug.Log("Applied: " + currentMaterial.materialName);
+            Debug.Log("Applied " + currentMaterial.materialName + " to " + obj.name);
+
+            // TEMP visual feedback
+            Renderer rend = obj.GetComponent<Renderer>();
+
+            if (rend != null)
+            {
+                rend.material.color = currentMaterial.previewColor;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No SteamAudioGeometry found on: " + obj.name);
         }
     }
 
+    // =========================
+    // HIGHLIGHT
+    // =========================
     void Highlight(Renderer rend)
     {
-        if (highlightedRenderer == rend) return;
+        // Already highlighted
+        if (highlightedRenderer == rend)
+            return;
 
+        // Remove old highlight
         ClearHighlight();
 
         highlightedRenderer = rend;
+
         originalColor = rend.material.color;
 
         rend.material.color = Color.green;
@@ -89,6 +159,34 @@ public class MaterialApplicator : MonoBehaviour
         {
             highlightedRenderer.material.color = originalColor;
             highlightedRenderer = null;
+        }
+    }
+
+    public void SetGunActive(bool active)
+    {
+        isGunActive = active;
+
+        if (!active)
+        {
+            ClearCurrentMaterial();
+            ClearHighlight();
+        }
+
+        Debug.Log("Material Gun Active: " + active);
+    }
+
+    // =========================
+    // EXIT MATERIAL MODE
+    // =========================
+    public void ClearCurrentMaterial()
+    {
+        currentMaterial = null;
+
+        ClearHighlight();
+
+        if (previewSphere != null)
+        {
+            previewSphere.gameObject.SetActive(false);
         }
     }
 }
