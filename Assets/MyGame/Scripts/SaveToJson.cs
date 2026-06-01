@@ -100,6 +100,7 @@ public class SaveToJson : MonoBehaviour
         File.WriteAllText(path, json);
 
         Debug.Log("SAVE DONE: " + path);
+        Debug.Log(Application.persistentDataPath);
     }
 }
 
