@@ -288,7 +288,7 @@ MonoBehaviour:
   m_SmoothMotionEnabled: 0
   m_SmoothTurnEnabled: 1
   m_NearFarEnableTeleportDuringNearInteraction: 1
-  m_UIScrollingEnabled: 1
+  m_UIScrollingEnabled: 0
   m_RayInteractorChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1764,7 +1764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a5caffda3883c4181e438530a21bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detailHardware: {fileID: 3799177168297079243}
+  detailHardware1: {fileID: 3799177168297079243}
+  detailHardware2: {fileID: 6593386370523186231}
   detailMaterials: {fileID: 2291194567791667438}
   objectOverviewParent: {fileID: 533065588628115959}
   objectOverviewDetail: {fileID: 1753557959225582691}
@@ -3722,7 +3723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2984967594591885667
 Transform:
   m_ObjectHideFlags: 0
@@ -7398,7 +7399,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7737914540555960225}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 063e2282baf8247429280c0272285cce, type: 3}
   m_Name: 
@@ -8496,7 +8497,7 @@ MonoBehaviour:
         m_MethodName: SpawnObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7952499341051626553, guid: f7bd7832f69d7c24282052c9b09f6048, type: 3}
+          m_ObjectArgument: {fileID: 7952499341051626553, guid: ae15dfc3d0c18854a87fb327eba1ccda, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
