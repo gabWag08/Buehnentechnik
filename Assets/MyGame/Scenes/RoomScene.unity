@@ -687,6 +687,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 10305548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &558782915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3799177168297079243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1625464835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &707338690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1065,11 @@ MonoBehaviour:
   material: {fileID: 11400000, guid: 5272c55b882edd34a9d80b11bd6f240c, type: 2}
   exportAllChildren: 0
   terrainSimplificationLevel: 0
+--- !u!1 &1233770164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6593386370523186231, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1625464835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1263788509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,6 +1320,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 7952499341051626553, guid: ae15dfc3d0c18854a87fb327eba1ccda, type: 3}
+    - target: {fileID: 5353361857548789466, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5663893676086941514, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_UIScrollingEnabled
       value: 0
@@ -1322,6 +1336,14 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 2024569053}
+    - target: {fileID: 6685407748070337042, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: detailHardware1
+      value: 
+      objectReference: {fileID: 558782915}
+    - target: {fileID: 6685407748070337042, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: detailHardware2
+      value: 
+      objectReference: {fileID: 1233770164}
     - target: {fileID: 8877177980677234388, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_InteractionManager
       value: 

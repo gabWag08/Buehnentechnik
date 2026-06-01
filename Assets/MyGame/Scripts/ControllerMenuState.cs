@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class ControllerMenuState : MonoBehaviour
 {
-    public GameObject detailHardware;
+    public GameObject detailHardware1;
+    public GameObject detailHardware2;
     public GameObject detailMaterials;
     public GameObject objectOverviewParent;
     public GameObject objectOverviewDetail;
@@ -16,7 +17,8 @@ public class ControllerMenuState : MonoBehaviour
 
     public void ResetMenu()
     {
-        detailHardware.SetActive(false);
+        detailHardware1.SetActive(false);
+        detailHardware2.SetActive(false);
         detailMaterials.SetActive(false);
         objectOverviewParent.SetActive(false);
         objectOverviewDetail.SetActive(false);
@@ -26,7 +28,8 @@ public class ControllerMenuState : MonoBehaviour
 
     public void ShowHardware()
     {
-        detailHardware.SetActive(true);
+        detailHardware1.SetActive(true);
+        detailHardware2.SetActive(false);
         detailMaterials.SetActive(false);
         objectOverviewParent.SetActive(false);
         objectOverviewDetail.SetActive(false);
@@ -37,7 +40,8 @@ public class ControllerMenuState : MonoBehaviour
     public void ShowMaterials()
     {
         detailMaterials.SetActive(true);
-        detailHardware.SetActive(false);
+        detailHardware1.SetActive(false);
+        detailHardware2.SetActive(false);
         objectOverviewParent.SetActive(false);
         objectOverviewDetail.SetActive(false);
         objectOverviewDeleteAll.SetActive(false);
@@ -47,7 +51,8 @@ public class ControllerMenuState : MonoBehaviour
     public void ShowObjectOverview()
     {
         objectOverviewParent.SetActive(true);
-        detailHardware.SetActive(false);
+        detailHardware1.SetActive(false);
+        detailHardware2.SetActive(false);
         detailMaterials.SetActive(false);
         objectOverviewDeleteAll.SetActive(true);
         xrScalling.SetActive(false);
@@ -56,7 +61,8 @@ public class ControllerMenuState : MonoBehaviour
     public void ShowXRScalling()
     {
         xrScalling.SetActive(true);
-        detailHardware.SetActive(false);
+        detailHardware1.SetActive(false);
+        detailHardware2.SetActive(false);
         detailMaterials.SetActive(false);
         objectOverviewParent.SetActive(false);
         objectOverviewDetail.SetActive(false);
