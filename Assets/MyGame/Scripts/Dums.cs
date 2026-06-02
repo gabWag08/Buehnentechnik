@@ -5,7 +5,7 @@ public class DrumHit : MonoBehaviour
 {
     public AudioSource audioSource;
 
-    void Awake()
+    void Start()
     {
         if (audioSource == null)
             audioSource = GetComponent<AudioSource>();
