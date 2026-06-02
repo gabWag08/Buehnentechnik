@@ -13370,11 +13370,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4222116222524584363}
+  - component: {fileID: 5661995322864833945}
   - component: {fileID: 275898240111124251}
   - component: {fileID: 3300953567782242693}
   - component: {fileID: 5661995322864833944}
   - component: {fileID: 5661995322864833943}
-  - component: {fileID: 5661995322864833945}
   - component: {fileID: 5661995322864833946}
   m_Layer: 0
   m_Name: Speaker
