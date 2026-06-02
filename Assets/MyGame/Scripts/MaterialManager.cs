@@ -127,6 +127,8 @@ public class MaterialApplicator : MonoBehaviour
             {
                 rend.material.color = currentMaterial.previewColor;
             }
+            previewSphere.gameObject.SetActive(false);
+            SetGunActive(false);
         }
         else
         {
@@ -150,7 +152,7 @@ public class MaterialApplicator : MonoBehaviour
 
         originalColor = rend.material.color;
 
-        rend.material.color = Color.green;
+        rend.material.color = currentMaterial.previewColor;
     }
 
     void ClearHighlight()
