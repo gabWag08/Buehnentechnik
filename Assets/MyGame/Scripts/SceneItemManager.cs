@@ -15,7 +15,7 @@ public class SceneItemManager : MonoBehaviour
 
     private Dictionary<SceneItem, GameObject> itemUI = new Dictionary<SceneItem, GameObject>();
 
-    private void Awake()
+    private void Start()
 {
     Instance = this;
 
