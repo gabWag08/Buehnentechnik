@@ -16,13 +16,8 @@ public class SceneItemManager : MonoBehaviour
     private Dictionary<SceneItem, GameObject> itemUI = new Dictionary<SceneItem, GameObject>();
 
     // =========================
-    // INSTANCE
+    // START (UNVERÄNDERT)
     // =========================
-
-    private void Awake()
-    {
-        Instance = this;
-    }
 
     private void Start()
     {
@@ -43,6 +38,8 @@ public class SceneItemManager : MonoBehaviour
 
     public void Register(SceneItem item)
     {
+        if (item == null) return;
+
         if (!items.ContainsKey(item.itemType))
             items[item.itemType] = new List<SceneItem>();
 
@@ -54,6 +51,8 @@ public class SceneItemManager : MonoBehaviour
 
     public void Unregister(SceneItem item)
     {
+        if (item == null) return;
+
         if (items.ContainsKey(item.itemType))
         {
             items[item.itemType].Remove(item);
@@ -109,6 +108,9 @@ public class SceneItemManager : MonoBehaviour
             return;
         }
 
+        if (itemUI.ContainsKey(item))
+            return; // verhindert doppelte UI
+
         GameObject uiObj = Instantiate(sliderPrefab, sliderParent);
         itemUI[item] = uiObj;
 
@@ -120,13 +122,15 @@ public class SceneItemManager : MonoBehaviour
 
         foreach (var s in sliders)
         {
-            if (s.name.ToLower().Contains("volume"))
+            string n = s.name.ToLower();
+
+            if (n.Contains("volume"))
                 volumeSlider = s;
 
-            if (s.name.ToLower().Contains("pitch"))
+            if (n.Contains("pitch"))
                 pitchSlider = s;
 
-            if (s.name.ToLower().Contains("stereopan"))
+            if (n.Contains("stereopan"))
                 stereoPanSlider = s;
         }
 
@@ -138,7 +142,9 @@ public class SceneItemManager : MonoBehaviour
 
         AudioSource audio = item.audioSource;
 
+        // =========================
         // VOLUME
+        // =========================
         if (volumeSlider != null)
         {
             volumeSlider.minValue = 0f;
@@ -152,7 +158,9 @@ public class SceneItemManager : MonoBehaviour
             });
         }
 
+        // =========================
         // PITCH
+        // =========================
         if (pitchSlider != null)
         {
             pitchSlider.minValue = 0.5f;
@@ -166,7 +174,9 @@ public class SceneItemManager : MonoBehaviour
             });
         }
 
+        // =========================
         // STEREO PAN
+        // =========================
         if (stereoPanSlider != null)
         {
             stereoPanSlider.minValue = -1f;
