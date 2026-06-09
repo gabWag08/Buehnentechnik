@@ -15,10 +15,18 @@ public class SceneItemManager : MonoBehaviour
 
     private Dictionary<SceneItem, GameObject> itemUI = new Dictionary<SceneItem, GameObject>();
 
-    private void Start()
+    private void Awake()
+{
+    Instance = this;
+
+    var sceneItems = FindObjectsByType<SceneItem>(
+        FindObjectsSortMode.None);
+
+    foreach (var item in sceneItems)
     {
-        Instance = this;
+        Register(item);
     }
+}
 
     // =========================
     // REGISTRATION
