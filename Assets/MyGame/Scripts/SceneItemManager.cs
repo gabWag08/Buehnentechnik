@@ -15,18 +15,27 @@ public class SceneItemManager : MonoBehaviour
 
     private Dictionary<SceneItem, GameObject> itemUI = new Dictionary<SceneItem, GameObject>();
 
-    private void Start()
-{
-    Instance = this;
+    // =========================
+    // INSTANCE
+    // =========================
 
-    var sceneItems = FindObjectsByType<SceneItem>(
-        FindObjectsSortMode.None);
-
-    foreach (var item in sceneItems)
+    private void Awake()
     {
-        Register(item);
+        Instance = this;
     }
-}
+
+    private void Start()
+    {
+        Instance = this;
+
+        var sceneItems = FindObjectsByType<SceneItem>(
+            FindObjectsSortMode.None);
+
+        foreach (var item in sceneItems)
+        {
+            Register(item);
+        }
+    }
 
     // =========================
     // REGISTRATION
@@ -37,7 +46,8 @@ public class SceneItemManager : MonoBehaviour
         if (!items.ContainsKey(item.itemType))
             items[item.itemType] = new List<SceneItem>();
 
-        items[item.itemType].Add(item);
+        if (!items[item.itemType].Contains(item))
+            items[item.itemType].Add(item);
 
         CreateUI(item);
     }
@@ -102,7 +112,6 @@ public class SceneItemManager : MonoBehaviour
         GameObject uiObj = Instantiate(sliderPrefab, sliderParent);
         itemUI[item] = uiObj;
 
-        // Slider finden
         Slider[] sliders = uiObj.GetComponentsInChildren<Slider>();
 
         Slider volumeSlider = null;
@@ -116,11 +125,11 @@ public class SceneItemManager : MonoBehaviour
 
             if (s.name.ToLower().Contains("pitch"))
                 pitchSlider = s;
-            if(s.name.ToLower().Contains("stereopan"))
+
+            if (s.name.ToLower().Contains("stereopan"))
                 stereoPanSlider = s;
         }
 
-        // Text setzen
         TMP_Text text = uiObj.GetComponentInChildren<TMP_Text>();
         if (text != null)
         {
@@ -129,9 +138,7 @@ public class SceneItemManager : MonoBehaviour
 
         AudioSource audio = item.audioSource;
 
-        // =========================
         // VOLUME
-        // =========================
         if (volumeSlider != null)
         {
             volumeSlider.minValue = 0f;
@@ -145,9 +152,7 @@ public class SceneItemManager : MonoBehaviour
             });
         }
 
-        // =========================
         // PITCH
-        // =========================
         if (pitchSlider != null)
         {
             pitchSlider.minValue = 0.5f;
@@ -161,11 +166,8 @@ public class SceneItemManager : MonoBehaviour
             });
         }
 
-        //==========================
-        // Stereo Pan
-        //==========================
-
-        if(stereoPanSlider != null)
+        // STEREO PAN
+        if (stereoPanSlider != null)
         {
             stereoPanSlider.minValue = -1f;
             stereoPanSlider.maxValue = 1f;
@@ -177,7 +179,6 @@ public class SceneItemManager : MonoBehaviour
                     audio.panStereo = value;
             });
         }
-        
     }
 
     void RemoveUI(SceneItem item)
