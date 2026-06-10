@@ -3,7 +3,72 @@ guid: e5e6295b188afdc498349e6562976e4a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 1c1017f1f6cb39f42955ecc7cb498167, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: col_2
+    second: {fileID: 2100000, guid: 4901e83c8f7fee84bab36cddf6e464c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: col_3
+    second: {fileID: 2100000, guid: a0cbc24d3ccb7f643a412e17149399de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: col_4
+    second: {fileID: 2100000, guid: 3f0b804660fc15147a7a95fdf0747567, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: col_5
+    second: {fileID: 2100000, guid: 4af075d6c5a49ac4988e825b0e1afee3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: col_5_transparant
+    second: {fileID: 2100000, guid: b0fee9c613cea664e92e601854584d3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: col_6
+    second: {fileID: 2100000, guid: 73e25aea0af42274bbc78fb391d9bf12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: col_master_drums_kits
+    second: {fileID: 2100000, guid: 8f6e64f079189054ba3e486cca8c3ffe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: uv_ampli_2
+    second: {fileID: 2100000, guid: 090addd0c39107b438e8986ee82efc8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: uv_ampli_3
+    second: {fileID: 2100000, guid: 9ad83ce43167591498b09340b6f6cfa1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: uv_lantai
+    second: {fileID: 2100000, guid: 7a6f7a765f9d01c46bf669609701ec02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: uv_speaker_2
+    second: {fileID: 2100000, guid: 2bda5107f86b6ab44bc4d6df11fcdf67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: uv_symbal
+    second: {fileID: 2100000, guid: 3b0da13de493b014697b1de0b9804143, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
