@@ -10,7 +10,7 @@ public class XRScalling : MonoBehaviour
     void Start()
     {
         xrScaleSlider.onValueChanged.AddListener(OnXRScaleChanged);
-        defaultScale = 10;
+        defaultScale = 1;
         xrScaleSlider.value = defaultScale;
     }
 
