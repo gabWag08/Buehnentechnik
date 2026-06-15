@@ -5,6 +5,7 @@ public class SceneItem : MonoBehaviour
     [Header("Optional")]
     public AudioSource audioSource;
 
+    [Header("Required")]
     public string itemType; // "Speaker", "Microphone", etc.
     public string displayName; // "Speaker1", "Speaker2"
 

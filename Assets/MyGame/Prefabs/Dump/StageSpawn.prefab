@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 207973930938318399, guid: a07b6380f78c582419d96f09d119e9bc, type: 3}
       propertyPath: m_Name
-      value: Stage_Built_C Variant
+      value: StageSpawn
       objectReference: {fileID: 0}
     - target: {fileID: 3748604760079243146, guid: a07b6380f78c582419d96f09d119e9bc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,5 +55,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 207973930938318399, guid: a07b6380f78c582419d96f09d119e9bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6823269494609024380}
   m_SourcePrefab: {fileID: 100100000, guid: a07b6380f78c582419d96f09d119e9bc, type: 3}
+--- !u!1 &93635551198356114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 207973930938318399, guid: a07b6380f78c582419d96f09d119e9bc, type: 3}
+  m_PrefabInstance: {fileID: 265279417722870957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6823269494609024380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93635551198356114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524b26ede0c5b3d4799ff619e7cec75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 120
