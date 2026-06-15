@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: -2468167839855552350}
   - component: {fileID: 8610832332934412757}
   - component: {fileID: -6890981461505522369}
+  - component: {fileID: -4393082300618882802}
   m_Layer: 0
   m_Name: StageLight
   m_TagString: Untagged
@@ -552,8 +553,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   itemType: Stage Light
   displayName: 
+--- !u!114 &-4393082300618882802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2450819887443935542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524b26ede0c5b3d4799ff619e7cec75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 120
 --- !u!1 &3446262931101365216
 GameObject:
   m_ObjectHideFlags: 0
