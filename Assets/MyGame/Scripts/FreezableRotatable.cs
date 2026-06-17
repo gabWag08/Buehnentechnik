@@ -36,7 +36,7 @@ public class FreezableRotatable : MonoBehaviour
         }
 
         // ===== A-Button: Freeze / Unfreeze =====
-        if (rightHandDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool aPressed))
+        if (leftHandDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool aPressed))
         {
             if (aPressed && !aPressedLastFrame)
             {
@@ -52,7 +52,7 @@ public class FreezableRotatable : MonoBehaviour
         // ===== Joystick Rotation =====
         if (rotateMode)
         {
-            if (rightHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 axis))
+            if (leftHandDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 axis))
             {
                 transform.Rotate(
                     Vector3.up,
