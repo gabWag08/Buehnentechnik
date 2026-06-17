@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -12,7 +13,11 @@ using System.Collections.Generic;
 [RequireComponent(typeof(AudioSource))]
 public class DiscordQualityMicInput : MonoBehaviour
 {
-    public KeyCode pushKey = KeyCode.V;
+    
+    [Header("─── Push-To-Talk ──────────────────────")]
+    [SerializeField] 
+    private InputActionProperty pushToTalkAction;
+
 
     [Header("─── Audio Mixer ────────────────────────")]
     [Tooltip("Name des AudioMixers in deinem Resources-Ordner (ohne Dateierweiterung).")]
@@ -121,8 +126,16 @@ public class DiscordQualityMicInput : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(pushKey) && !isTalking) StartTalking();
-        if (Input.GetKeyUp(pushKey)   &&  isTalking) StopTalking();
+        if (pushToTalkAction.action == null)
+            return;
+
+        bool pressed = pushToTalkAction.action.IsPressed();
+
+        if (pressed && !isTalking)
+            StartTalking();
+
+        if (!pressed && isTalking)
+            StopTalking();
     }
 
     // ── Mixer Setup ────────────────────────────────────────────────────────────
