@@ -4,6 +4,11 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
 
+#if UNITY_ANDROID && !UNITY_EDITOR
+using UnityEngine.Android;
+#endif
+
+
 /// <summary>
 /// Discord-Quality Push-to-Talk Microphone Input
 /// Implements: High-Pass Filter, Noise Gate (Hysteresis),
@@ -98,6 +103,14 @@ public class DiscordQualityMicInput : MonoBehaviour
 
     void Start()
     {
+        #if UNITY_ANDROID && !UNITY_EDITOR
+            if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
+            {
+                Permission.RequestUserPermission(Permission.Microphone);
+            }
+        #endif
+
+        audioSource = GetComponent<AudioSource>();
         audioSource = GetComponent<AudioSource>();
         audioSource.loop         = true;
         audioSource.spatialBlend = 0f;
@@ -126,8 +139,11 @@ public class DiscordQualityMicInput : MonoBehaviour
 
     void Update()
     {
+        
         if (pushToTalkAction.action == null)
-            return;
+        return;
+
+        Debug.Log(pushToTalkAction.action.IsPressed());
 
         bool pressed = pushToTalkAction.action.IsPressed();
 
@@ -136,6 +152,15 @@ public class DiscordQualityMicInput : MonoBehaviour
 
         if (!pressed && isTalking)
             StopTalking();
+    }
+    void OnEnable()
+    {
+        pushToTalkAction.action?.Enable();
+    }
+
+    void OnDisable()
+    {
+        pushToTalkAction.action?.Disable();
     }
 
     // ── Mixer Setup ────────────────────────────────────────────────────────────
