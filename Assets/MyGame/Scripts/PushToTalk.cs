@@ -143,7 +143,7 @@ public class DiscordQualityMicInput : MonoBehaviour
         if (pushToTalkAction.action == null)
         return;
 
-        Debug.Log(pushToTalkAction.action.IsPressed());
+        //Debug.Log(pushToTalkAction.action.IsPressed());
 
         bool pressed = pushToTalkAction.action.IsPressed();
 
