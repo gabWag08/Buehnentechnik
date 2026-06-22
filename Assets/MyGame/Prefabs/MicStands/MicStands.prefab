@@ -180,6 +180,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6866113901576217913, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 861861847063462574}
+    - targetCorrespondingSourceObject: {fileID: -6866113901576217913, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3048651284656754505}
     - targetCorrespondingSourceObject: {fileID: -408514342786940425, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6109477719880266942}
@@ -189,6 +192,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -408514342786940425, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3841754611132014822}
+    - targetCorrespondingSourceObject: {fileID: -408514342786940425, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2214497786046230402}
     - targetCorrespondingSourceObject: {fileID: 7496834404227151269, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7816555962788541494}
@@ -198,6 +204,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7496834404227151269, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4695265094136687598}
+    - targetCorrespondingSourceObject: {fileID: 7496834404227151269, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4097818725012425598}
     - targetCorrespondingSourceObject: {fileID: 2927318272665440538, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5712409437717639347}
@@ -207,6 +216,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2927318272665440538, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 121819155162057549}
+    - targetCorrespondingSourceObject: {fileID: 2927318272665440538, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1684716029800988060}
     - targetCorrespondingSourceObject: {fileID: -2427075389622193127, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 675083108765263638}
@@ -216,6 +228,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2427075389622193127, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3433110161373884469}
+    - targetCorrespondingSourceObject: {fileID: -2427075389622193127, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6640357788350152312}
     - targetCorrespondingSourceObject: {fileID: -7230900758923231113, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1204052635976064860}
@@ -225,6 +240,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7230900758923231113, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6916109423573009276}
+    - targetCorrespondingSourceObject: {fileID: -7230900758923231113, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7630570628808058483}
     - targetCorrespondingSourceObject: {fileID: -3127030356592979056, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2703686005864661164}
@@ -234,6 +252,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -3127030356592979056, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2242308874213456933}
+    - targetCorrespondingSourceObject: {fileID: -3127030356592979056, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1527508332513925212}
     - targetCorrespondingSourceObject: {fileID: -4921528208064137428, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 563604269852336612}
@@ -243,6 +264,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4921528208064137428, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6096368813149241940}
+    - targetCorrespondingSourceObject: {fileID: -4921528208064137428, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9081628800780557643}
     - targetCorrespondingSourceObject: {fileID: -4624525425177364750, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3293479977822889595}
@@ -252,6 +276,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4624525425177364750, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2063558844331821892}
+    - targetCorrespondingSourceObject: {fileID: -4624525425177364750, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2283084579498294533}
     - targetCorrespondingSourceObject: {fileID: -3408754118113221967, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8181360402015166075}
@@ -261,6 +288,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -3408754118113221967, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 267732877245552617}
+    - targetCorrespondingSourceObject: {fileID: -3408754118113221967, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1510341065094351330}
     - targetCorrespondingSourceObject: {fileID: 3526465626705869742, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2836219159518116674}
@@ -270,6 +300,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3526465626705869742, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8916930442380532000}
+    - targetCorrespondingSourceObject: {fileID: 3526465626705869742, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3801393673535308335}
     - targetCorrespondingSourceObject: {fileID: -3674463930705351152, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8547596634054745477}
@@ -279,6 +312,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -3674463930705351152, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 869589492730156923}
+    - targetCorrespondingSourceObject: {fileID: -3674463930705351152, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8127739544895627951}
     - targetCorrespondingSourceObject: {fileID: 6421675319945298842, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3543199749242277496}
@@ -288,6 +324,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6421675319945298842, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 411115315507902707}
+    - targetCorrespondingSourceObject: {fileID: 6421675319945298842, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1009533914832618090}
     - targetCorrespondingSourceObject: {fileID: 821799069744591989, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8472679967539689863}
@@ -297,6 +336,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 821799069744591989, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1076563771956322323}
+    - targetCorrespondingSourceObject: {fileID: 821799069744591989, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 173859511698429430}
     - targetCorrespondingSourceObject: {fileID: 8327119415815297991, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3108085644056041892}
@@ -306,6 +348,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8327119415815297991, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5317868689585328961}
+    - targetCorrespondingSourceObject: {fileID: 8327119415815297991, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1814483732144036746}
     - targetCorrespondingSourceObject: {fileID: -8431000554265689331, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5431760183209565010}
@@ -315,6 +360,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8431000554265689331, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3716800858004306971}
+    - targetCorrespondingSourceObject: {fileID: -8431000554265689331, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1076153866107765811}
   m_SourcePrefab: {fileID: 100100000, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
 --- !u!1 &131474578618358488 stripped
 GameObject:
@@ -491,6 +539,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.05141409, y: 0.23410118, z: 0.05141409}
   m_Center: {x: -0.000000014901161, y: 0.029357553, z: -0.0000005122274}
+--- !u!114 &2283084579498294533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131474578618358488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: Microphone
+  displayName: 
 --- !u!1 &410476165816736518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4921528208064137428, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -666,6 +729,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6785977, y: 1.2776296, z: 0.67719173}
   m_Center: {x: -0.06189525, y: 0.6220299, z: -0.040155232}
+--- !u!114 &9081628800780557643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410476165816736518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: MicStand
+  displayName: 
 --- !u!1 &1076905685258426244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3526465626705869742, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -841,6 +919,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.47891474, y: 1.5458233, z: 0.6209178}
   m_Center: {x: 0.026997328, y: 0.73548555, z: 0.02807039}
+--- !u!114 &3801393673535308335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076905685258426244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: MicStand
+  displayName: 
 --- !u!1 &1629909147631435056 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2927318272665440538, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -1016,6 +1109,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.42856312, y: 1.5639122, z: 0.40040636}
   m_Center: {x: -0.020045757, y: 0.66970575, z: -0.058950007}
+--- !u!114 &1684716029800988060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629909147631435056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: MicStand
+  displayName: 
 --- !u!1 &2213479662605924077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6866113901576217913, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -1191,6 +1299,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.054200143, y: 0.22712755, z: 0.054200195}
   m_Center: {x: 0.00000002142042, y: 0.02587074, z: -0.00000091735274}
+--- !u!114 &3048651284656754505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2213479662605924077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: Microphone
+  displayName: 
 --- !u!1 &2713379040337046621 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7230900758923231113, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -1366,6 +1489,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.054128602, y: 0.23410118, z: 0.054128602}
   m_Center: {x: 0.00000014249235, y: 0.029357672, z: -0.00000071991235}
+--- !u!114 &7630570628808058483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713379040337046621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: Microphone
+  displayName: 
 --- !u!1 &3656953819277676923 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -1561,6 +1699,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4811113, y: 0.53867894, z: 0.4640169}
   m_Center: {x: 0.0064457655, y: 0.23066053, z: -0.03280288}
+--- !u!114 &1076153866107765811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3818599915385237287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: MicStand
+  displayName: 
 --- !u!1 &3848018191051626591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 821799069744591989, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -1736,6 +1889,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.33183336, y: 0.5614756, z: 0.8260013}
   m_Center: {x: -0.007556677, y: 0.21926223, z: -0.08699936}
+--- !u!114 &173859511698429430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3848018191051626591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: MicStand
+  displayName: 
 --- !u!1 &4924087580565745117 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -408514342786940425, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -1911,6 +2079,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.054200143, y: 0.22712755, z: 0.054200195}
   m_Center: {x: 0.00000002142042, y: 0.02587086, z: -0.00000091735274}
+--- !u!114 &2214497786046230402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924087580565745117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: Microphone
+  displayName: 
 --- !u!1 &5588592424083339245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8327119415815297991, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -2086,6 +2269,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.44062924, y: 0.5353215, z: 0.4030056}
   m_Center: {x: -0.027008891, y: 0.23233926, z: -0.0015791059}
+--- !u!114 &1814483732144036746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588592424083339245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: MicStand
+  displayName: 
 --- !u!1 &6200171245487659407 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7496834404227151269, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -2261,6 +2459,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5043994, y: 1.5247366, z: 0.40350056}
   m_Center: {x: -0.047564924, y: 0.63123393, z: -0.03274852}
+--- !u!114 &4097818725012425598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200171245487659407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: MicStand
+  displayName: 
 --- !u!1 &6940115215840778291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2427075389622193127, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -2436,6 +2649,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.054128602, y: 0.23410118, z: 0.054128602}
   m_Center: {x: 0.000000084750354, y: 0.029357553, z: 0.0000002188608}
+--- !u!114 &6640357788350152312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6940115215840778291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: Microphone
+  displayName: 
 --- !u!1 &7430704504107659184 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6421675319945298842, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -2611,6 +2839,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32657778, y: 0.4680934, z: 0.903392}
   m_Center: {x: 0.036076367, y: 0.2659533, z: -0.04830399}
+--- !u!114 &1009533914832618090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7430704504107659184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: MicStand
+  displayName: 
 --- !u!1 &7682010370850521018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3127030356592979056, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -2786,6 +3029,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7116811, y: 1.3201427, z: 0.774354}
   m_Center: {x: -0.032768607, y: 0.5782236, z: -0.037840188}
+--- !u!114 &1527508332513925212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682010370850521018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: MicStand
+  displayName: 
 --- !u!1 &7976114629132078747 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3408754118113221967, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -2961,6 +3219,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.05141409, y: 0.23410118, z: 0.051414095}
   m_Center: {x: 0.00000004656613, y: 0.029357672, z: 0.00000021141022}
+--- !u!114 &1510341065094351330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7976114629132078747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: Microphone
+  displayName: 
 --- !u!1 &8286864431750742586 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3674463930705351152, guid: dbb8965fcf919fe439bf68d6837f38e7, type: 3}
@@ -3136,3 +3409,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5572262, y: 1.4705269, z: 0.6492033}
   m_Center: {x: 0.061382294, y: 0.7545053, z: 0.09030217}
+--- !u!114 &8127739544895627951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286864431750742586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069856668c81998409af41f8a68f1a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  itemType: MicStand
+  displayName: 
