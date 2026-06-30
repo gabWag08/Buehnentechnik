@@ -19,7 +19,7 @@ public class ObjSpawner : MonoBehaviour
         }
 
         // Spawn slightly in front of the hand
-        Vector3 spawnPos = handInteractor.transform.position + handInteractor.transform.forward * 0.1f;
+        Vector3 spawnPos = handInteractor.transform.position + handInteractor.transform.forward * 0.8f;
 
         GameObject obj = Instantiate(currentPrefab, spawnPos, Quaternion.identity);
 
